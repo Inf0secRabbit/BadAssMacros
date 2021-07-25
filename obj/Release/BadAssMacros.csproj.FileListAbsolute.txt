@@ -1,0 +1,9 @@
+C:\Users\sbasu\source\repos\EvilMacros\bin\Release\BadAssMacros.exe.config
+C:\Users\sbasu\source\repos\EvilMacros\bin\Release\BadAssMacros.exe
+C:\Users\sbasu\source\repos\EvilMacros\bin\Release\BadAssMacros.pdb
+C:\Users\sbasu\source\repos\EvilMacros\bin\Release\OpenMcdf.xml
+C:\Users\sbasu\source\repos\EvilMacros\obj\Release\BadAssMacros.csproj.CoreCompileInputs.cache
+C:\Users\sbasu\source\repos\EvilMacros\obj\Release\BadAssMacros.csproj.Fody.CopyLocal.cache
+C:\Users\sbasu\source\repos\EvilMacros\obj\Release\BadAssMacros.csproj.CopyComplete
+C:\Users\sbasu\source\repos\EvilMacros\obj\Release\BadAssMacros.exe
+C:\Users\sbasu\source\repos\EvilMacros\obj\Release\BadAssMacros.pdb
