@@ -52,7 +52,7 @@ BadAssMacros require 3rd party libraries that can be installed from the NuGet pa
 	* `Install-Package Fody -Version 4.0.2`
 * Build the project :)
 
-The BadAssMacro.exe will be inside the **bin** directory.  
+The BadAssMacros.exe will be inside the **bin** directory.  
 
 
 ## Examples
