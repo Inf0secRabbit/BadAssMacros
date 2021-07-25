@@ -57,7 +57,7 @@ The BadAssMacro.exe will be inside the **bin** directory.
 
 ## Examples
 
-- Help
+- Show Help
 ```bash
 BadAssMacros.exe -h
 ```
@@ -96,3 +96,7 @@ BadAssMacro was tested against local Antivirus solutions and online services lik
 
 * [@Inf0secRabbit](https://twitter.com/Inf0secRabbit)
 * [@SoumyadeepBas12](https://twitter.com/SoumyadeepBas12)
+
+## Credits
+
+* OfficePurge by FireEye <a href="https://github.com/fireeye/OfficePurge">here</a>
