@@ -17,7 +17,7 @@ The tool takes in the malicious doc/excel file ready and embedded with the gener
 BadAssMacros features currently include:
 
 * Classic VBA shellcode injection.
-* Indirect VBA (using LoadLibrary).
+* Indirect VBA shellcode injection (using LoadLibrary).
 * Sandbox Detection. 
 * VBA Purging.
 * Shell code obfuscation.
