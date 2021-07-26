@@ -21,7 +21,7 @@ BadAssMacros features currently include:
 * Sandbox Detection. 
 * VBA Purging.
 * Shell code obfuscation.
-* Variable name randomisation.
+* Variable name Randomization.
 
 ### Shellcode Injection Techniques
 
