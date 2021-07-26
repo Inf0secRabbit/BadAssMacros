@@ -505,7 +505,7 @@ namespace BadAssMacros
                     sb.AppendFormat("Chr(&H{0:X}), ", (uint)b);
                     counter++;
 
-                    //Adding a line break after every 50 char
+                    //Adding a line break after every 30 char
                     if (counter % 30 == 0)
                     {
                         sb.AppendFormat("_{0}", Environment.NewLine);
