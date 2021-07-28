@@ -1,4 +1,4 @@
-﻿using NDesk.Options;
+using NDesk.Options;
 using OpenMcdf;
 using System;
 using System.Collections.Generic;
@@ -145,12 +145,12 @@ namespace BadAssMacros
         public static void Ascii()
         {
 
-            Console.WriteLine("  ____            _                  __  __                          ");
+            Console.WriteLine("  __            _                  _  _                          ");
             Console.WriteLine(" |  _ \\          | |   /\\           |  \\/  |                         ");
-            Console.WriteLine(" | |_) | __ _  __| |  /  \\   ___ ___| \\  / | __ _  ___ _ __ ___  ___ ");
-            Console.WriteLine(" |  _ < / _` |/ _` | / /\\ \\ / __/ __| |\\/| |/ _` |/ __| '__/ _ \\/ __|");
-            Console.WriteLine(" | |_) | (_| | (_| |/ ____ \\__ \\__ \\| |  | | (_| | (__| | | (_) \\__ \\");
-            Console.WriteLine(" |____/ \\__,_|\\__,_/_/    \\_\\___/___/_|  |_|\\__,_|\\___|_|  \\___/|___/");
+            Console.WriteLine(" | |) | _ _  _| |  /  \\   __ _| \\  / | _ _  __ _ _ __  _ ");
+            Console.WriteLine(" |  _ < / ` |/ _` | / /\\ \\ / _/ _| |\\/| |/ _` |/ _| '_/ _ \\/ _|");
+            Console.WriteLine(" | |) | (| | (| |/ __ \\_ \\__ \\| |  | | (| | (| | | () \\__ \\");
+            Console.WriteLine(" |_/ \\,|\\_,//    \\\\__/_/|  ||\\,|\\__||  \\__/|__/");
             Console.WriteLine("\t\t\t            \n\n Author: @Inf0secRabbit && @SoumyadeepBas12\n");
 
         }
@@ -488,7 +488,14 @@ namespace BadAssMacros
                     }
                 }
                 String payload = sb.ToString();
-                payload = payload.Substring(0, payload.Length - 2);
+                if (bytes.Length % 50 == 0)
+                {
+                    payload = payload.Substring(0, payload.Length - 5);
+                }
+                else
+                {
+                    payload = payload.Substring(0, payload.Length - 2);
+                }
                 Byte[] final = new UTF8Encoding(true).GetBytes(" " + s[1] + " = Array(" + payload + ")\n");
                 fs.Write(final, 0, final.Length);
 
@@ -512,7 +519,14 @@ namespace BadAssMacros
                     }
                 }
                 String payload = sb.ToString();
-                payload = payload.Substring(0, payload.Length - 2);
+                if (bytes.Length % 30 == 0)
+                {
+                    payload = payload.Substring(0, payload.Length - 5);
+                }
+                else
+                {
+                    payload = payload.Substring(0, payload.Length - 2);
+                }
                 Byte[] final = new UTF8Encoding(true).GetBytes(" " + s[3] + " = Array(" + payload + ")\n\n");
                 fs.Write(final, 0, final.Length);
 
