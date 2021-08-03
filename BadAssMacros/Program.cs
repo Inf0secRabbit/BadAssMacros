@@ -145,12 +145,12 @@ namespace BadAssMacros
         public static void Ascii()
         {
 
-            Console.WriteLine("  __            _                  _  _                          ");
+            Console.WriteLine("  ____            _                  __  __                          ");
             Console.WriteLine(" |  _ \\          | |   /\\           |  \\/  |                         ");
-            Console.WriteLine(" | |) | _ _  _| |  /  \\   __ _| \\  / | _ _  __ _ _ __  _ ");
-            Console.WriteLine(" |  _ < / ` |/ _` | / /\\ \\ / _/ _| |\\/| |/ _` |/ _| '_/ _ \\/ _|");
-            Console.WriteLine(" | |) | (| | (| |/ __ \\_ \\__ \\| |  | | (| | (| | | () \\__ \\");
-            Console.WriteLine(" |_/ \\,|\\_,//    \\\\__/_/|  ||\\,|\\__||  \\__/|__/");
+            Console.WriteLine(" | |_) | __ _  __| |  /  \\   ___ ___| \\  / | __ _  ___ _ __ ___  ___ ");
+            Console.WriteLine(" |  _ < / _` |/ _` | / /\\ \\ / __/ __| |\\/| |/ _` |/ __| '__/ _ \\/ __|");
+            Console.WriteLine(" | |_) | (_| | (_| |/ ____ \\__ \\__ \\| |  | | (_| | (__| | | (_) \\__ \\");
+            Console.WriteLine(" |____/ \\__,_|\\__,_/_/    \\_\\___/___/_|  |_|\\__,_|\\___|_|  \\___/|___/");
             Console.WriteLine("\t\t\t            \n\n Author: @Inf0secRabbit && @SoumyadeepBas12\n");
 
         }
