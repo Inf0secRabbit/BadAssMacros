@@ -65,25 +65,34 @@ BadAssMacros.exe -h
 - Create VBA for classic shellcode injection from raw shellcode
 ```bash
 BadAssMacros.exe -i <path_to_raw_shellcode_file> -w <doc/excel> -p no -s classic -c <caesar_shift_value> -o <path_to_output_file>
-
 ```
 
 ![ClassicVBA](https://user-images.githubusercontent.com/21200517/128637913-e53e77f2-dc4c-49ce-9345-968c5eb1ce41.png)
+
 
 - Create VBA for indirect shellcode injection from raw shellcode
 ```bash
 BadAssMacros.exe -i <path_to_raw_shellcode_file> -w <doc/excel> -p no -s indirect -o <path_to_output_file>
 ```
 
+![IndirectVBA](https://user-images.githubusercontent.com/21200517/128638004-13752f39-ddbc-4a71-8276-d09e4d67ba95.png)
+
+
 - List modules inside Doc/Excel file
 ```bash
 BadAssMacros.exe -i <path_to_doc/excel_file> -w <doc/excel> -p yes -l
 ```
 
+![ListingModules](https://user-images.githubusercontent.com/21200517/128638013-e078770e-ffe6-4814-afda-01f2f29ad6d7.png)
+
+
 - Purge Doc/Excel file 
 ```bash
 BadAssMacros.exe -i <path_to_doc/excel_file> -w <doc/excel> -p yes -o <path_to_output_file> -m <module_name>
 ```
+
+![PurgedDocument](https://user-images.githubusercontent.com/21200517/128638029-a87c1d44-1d91-4ab1-a988-cbb067d60f35.png)
+
 
 ## Detection 
 
