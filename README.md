@@ -65,6 +65,9 @@ BadAssMacros.exe -h
 - Create VBA for classic shellcode injection from raw shellcode
 ```bash
 BadAssMacros.exe -i <path_to_raw_shellcode_file> -w <doc/excel> -p no -s classic -c <caesar_shift_value> -o <path_to_output_file>
+
+![ClassicVBA](https://user-images.githubusercontent.com/21200517/128637913-e53e77f2-dc4c-49ce-9345-968c5eb1ce41.png)
+
 ```
 
 - Create VBA for indirect shellcode injection from raw shellcode
