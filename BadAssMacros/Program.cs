@@ -1,4 +1,3 @@
-using NDesk.Options;
 using OpenMcdf;
 using System;
 using System.Collections.Generic;
@@ -136,7 +135,7 @@ namespace BadAssMacros
             return new string(chars);
         }
 
-        public static void ShowHelp(OptionSet p)
+        public static void ShowHelp(NDesk.Options.Fork.OptionSet p)
         {
             Console.WriteLine("Usage:");
             p.WriteOptionDescriptions(Console.Out);
@@ -166,7 +165,7 @@ namespace BadAssMacros
 
             Ascii();
 
-            OptionSet options = new OptionSet(){
+            NDesk.Options.Fork.OptionSet options = new NDesk.Options.Fork.OptionSet(){
                 {"i|input=","Input file\n", v => _filename=v},
                 {"w|macroType=","excel,doc\n", v =>_type=v},
                 {"p|purge=","yes,no\n", v => _purge=v},
