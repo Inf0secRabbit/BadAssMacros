@@ -8,8 +8,8 @@ using Kavod.Vba.Compression;
 namespace BadAssMacros
 
 {
-    class Utils
-    {
+	class Utils
+	{
 		public static Dictionary<string, string> ParseArgs(string[] args)
 		{
 			Dictionary<string, string> ret = new Dictionary<string, string>();
@@ -29,7 +29,7 @@ namespace BadAssMacros
 			}
 			return ret;
 		}
-		
+
 		public static List<ModuleInformation> ParseModulesFromDirStream(byte[] dirStream)
 		{
 			// 2.3.4.2 dir Stream: Version Independent Project Information
@@ -144,7 +144,7 @@ namespace BadAssMacros
 
 			// Change MODULEOFFSET to 0
 			string zeros = "\0\0\0\0";
-			
+
 			while (offset < dirStream.Length)
 			{
 				tag = GetWord(dirStream, offset);

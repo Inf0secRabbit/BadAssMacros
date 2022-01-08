@@ -1,0 +1,22 @@
+install:
+  - choco install gitversion.portable -pre -y
+  - choco install gitlink -y
+
+configuration: 
+  - Release
+  - Debug
+
+build_script:
+  - cmd: nuget restore NDesk.Options.Fork\NDesk.Options.Fork.sln
+  - cmd: gitversion /l console /output buildserver /updateAssemblyInfo
+  
+  - cmd: msbuild NDesk.Options.Fork\NDesk.Options.Fork.sln
+  
+  - cmd: ECHO GitLink NDesk.Options.Fork\ -u https://github.com/torston/ndesk.options.fork -c %CONFIGURATION%
+  - cmd: GitLink . -u https://github.com/torston/ndesk.options.fork -c %CONFIGURATION%
+  
+  - cmd: ECHO nuget pack nuget\NDesk.Options.Fork.nuspec -version "%GitVersion_NuGetVersion%" -prop "configuration=%CONFIGURATION%"
+  - cmd: nuget pack nuget\NDesk.Options.Fork.nuspec -version "%GitVersion_NuGetVersion%" -prop "configuration=%CONFIGURATION%"
+  - cmd: if ["%CONFIGURATION%"] == ["Release"] appveyor PushArtifact "NDesk.Options.Fork.%GitVersion_NuGetVersion%.nupkg"
+  - cmd: appveyor PushArtifact "NDesk.Options.Fork\bin\%CONFIGURATION%\NDesk.Options.Fork.dll"
+  - cmd:  if ["%CONFIGURATION%"] == ["Debug"] appveyor PushArtifact "NDesk.Options.Fork\bin\%CONFIGURATION%\NDesk.Options.Fork.pdb"
